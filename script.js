@@ -8,8 +8,7 @@ let inputEl = document.getElementById('search');
 let modeEl = document.getElementById('mode')
 let navEl = document.getElementById('nav')
 const stextEl = document.querySelector('.short-text');
-const searchInput = document.querySelector('#search');
-const searchBtn = document.querySelector('#search-btn');
+
 
 
 menuIcon.onclick = function () {
@@ -23,7 +22,7 @@ modeEl.addEventListener('click', function () {
     navEl.classList.toggle('colour');
     container.classList.toggle('colour');
     stextEl.classList.toggle('textcolour');
-    inputEl.classList.toggle('textcolour');
+    // inputEl.classList.toggle('textcolour');
 });
 
 
@@ -42,7 +41,8 @@ async function mostPopular() {
 mostPopular();
 
 function append(data) {
-    // let containeronline = document.getElementById("container-online");
+    let containeronline = document.getElementById("container-online"); 
+    // container-online.innerHTML = null;
     data.forEach(({ snippet, id: { videoId } }) => {
         let img = snippet.thumbnails.high.url;
         let title = snippet.title;
@@ -64,9 +64,7 @@ function append(data) {
         }
         div.addEventListener("click", function () {
             localStorage.setItem("video", JSON.stringify(data));
-            window.location.href = "./play-video.html";
-            // window.location.href = "${data.snippet.thumbnails.high.url}";
-
+            window.location.href = "./video.html";
         });
         div.append(image, name, Cname);
         containeronline.append(div);
@@ -75,10 +73,21 @@ function append(data) {
 
 // search video in youTube
 
-let searchLink = "https://www.youtube.com/results?search_query=";
+async function search() {
+    let query = document.getElementById("query").value;
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${API}`);
+    let data = await res.json()
+    append(data.items);
+    console.log(value);
+}
 
-searchBtn.addEventListener('click', () => {
-    if (searchInput.value.length) {
-        location.href = searchLink + searchInput.value;
-    }
-})
+//
+
+// let searchLink = "https://www.youtube.com/results?search_query=";
+
+// searchBtn.addEventListener('click', () => {
+//     if (searchInput.value.length) {
+//         location.href = searchLink + searchInput.value;
+//     }
+// })
+

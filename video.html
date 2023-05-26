@@ -5,24 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Video</title>
+    <title>play video</title>
     <link rel="stylesheet" href="style.css">
+   
 </head>
 
 <body>
-    <nav>
+    <nav id="nav">
         <div class="nav-left flex-div">
             <img src="./image/menu.png" class="menu-icon">
             <img src="./image/logo.png" class="logo">
         </div>
         <div class="nav-middle flex-div">
-            <div class="search-box flex-div">
-                <input type="text" placeholder="Search">
-                <img src="./image/search.png" alt="">
+            <div class="search-box flex-div" id="form">
+                <input type="text" placeholder="Search" id="query" oninput="search">
+                <img src="./image/search.png" id="search-btn">
             </div>
             <img src="./image/voice-search.png" class="mic-icone">
         </div>
         <div class="nav-right flex-div">
+            <img src="./image/icons8-sun.gif" id="mode">
             <img src="./image/upload.png" alt="">
             <img src="./image/more.png" alt="">
             <img src="./image/notification.png" alt="">
@@ -30,85 +32,90 @@
         </div>
     </nav>
 
-
+    <!-- play video main container -->
     <div class="container play-container">
         <div class="row">
             <div class="play-video">
-                <video controls autoplay>
-                    <!-- <source src="${videoId}" type="video/mp4"> -->
-                    <source src="" type="video/mp4">
-                </video>
-
-                <div class="tags">
-                    <a href="">#Coding</a>
-                    <a href="">#HTML</a>
-                    <a href="">#CSS</a>
-                    <a href="">JavaScript</a>
-
-                </div>
-                <h3>Bestn YouTube Channl TonLearn Web Devlopment</h3>
-                <div class="play-video-info">
-                    <p>1225 Views &bull; 2day ago</p>
-                    <div>
-                        <a href=""><img src="./image/like.png">125</a>
-                        <a href=""><img src="./image/dislike.png">2</a>
-                        <a href=""><img src="./image/share.png">Share</a>
-                        <a href=""><img src="./image/save.png">save</a>
-
-                    </div>
-                </div>
-                <hr>
-                <div class="plublisher">
-                    <img src="./image/Jack.png">
-                    <div>
-                        <p>Satyam Tutorials</p>
-                        <span>500k Subscribers</span>
-                    </div>
-                    <button type="button">Subscribe</button>
-                </div>
-                <div class="vid-description">
-                    <p>Channel that makes learning</p>
-                    <p>Subscribe Satyam Tutorials to watch more Tutorials on new Devlopment</p>
-                    <hr>
-                    <h4>134 Comments</h4>
-
-                    <div class="add-comment">
-                        <img src="./image/Jack.png">
-                        <input type="text" placeholder="Write comments....">
-                    </div>
-                    <div class="old-comment">
-                        <img src="./image/Jack.png">
-                        <div>
-                            <h3>Satyam Modi <span>2 days ago</span></h3>
-                            <p>This wabsite is ausome for playing the video it quality is so good.</p>
-                            <div class="acomment-action">
-                                <img src="./image/like.png">
-                                <span>244</span>
-                                <img src="./image/dislike.png">
-                                <span>2</span>
-                                <span>Replay</span>
-                                <a href="">All Replay</a>
+                <div class="paly-top">
+                    <div class="all-play">
+                        <div id="play">
+                        </div>
+                        <div class="tags">
+                            <a href="">#Coding</a>
+                            <a href="">#HTML</a>
+                            <a href="">#CSS</a>
+                            <a href="">JavaScript</a>
+        
+                        </div>
+                        <h3>Bestn YouTube Channl TonLearn Web Devlopment</h3>
+                        <div class="play-video-info">
+                            <p>1225 Views &bull; 2day ago</p>
+                            <div>
+                                <a href=""><img src="./image/like.png">125</a>
+                                <a href=""><img src="./image/dislike.png">2</a>
+                                <a href=""><img src="./image/share.png">Share</a>
+                                <a href=""><img src="./image/save.png">save</a>
+        
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="plublisher">
+                            <img src="./image/Jack.png">
+                            <div>
+                                <p>Satyam Tutorials</p>
+                                <span>500k Subscribers</span>
+                            </div>
+                            <button type="button">Subscribe</button>
+                        </div>
+                        <div class="vid-description">
+                            <p>Channel that makes learning</p>
+                            <p>Subscribe Satyam Tutorials to watch more Tutorials on new Devlopment</p>
+                            <hr>
+                            <h4>134 Comments</h4>
+        
+                            <div class="add-comment">
+                                <img src="./image/Jack.png">
+                                <input type="text" placeholder="Write comments....">
+                            </div>
+                            <div class="old-comment">
+                                <img src="./image/Jack.png">
+                                <div>
+                                    <h3>Satyam Modi <span>2 days ago</span></h3>
+                                    <p>This wabsite is ausome for playing the video it quality is so good.</p>
+                                    <div class="acomment-action">
+                                        <img src="./image/like.png">
+                                        <span>244</span>
+                                        <img src="./image/dislike.png">
+                                        <span>2</span>
+                                        <span>Replay</span>
+                                        <a href="">All Replay</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="old-comment">
+                                <img src="./image/simon.png">
+                                <div>
+                                    <h3>Satyam Modi <span>1 week ago</span></h3>
+                                    <p>This wabsite is ausome for playing the video it quality is so good.</p>
+                                    <div class="acomment-action">
+                                        <img src="./image/like.png">
+                                        <span>244</span>
+                                        <img src="./image/dislike.png">
+                                        <span>2</span>
+                                        <span>Replay</span>
+                                        <a href="">All Replay</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="old-comment">
-                        <img src="./image/simon.png">
-                        <div>
-                            <h3>Satyam Modi <span>1 week ago</span></h3>
-                            <p>This wabsite is ausome for playing the video it quality is so good.</p>
-                            <div class="acomment-action">
-                                <img src="./image/like.png">
-                                <span>244</span>
-                                <img src="./image/dislike.png">
-                                <span>2</span>
-                                <span>Replay</span>
-                                <a href="">All Replay</a>
-                            </div>
-                        </div>
+                    <div class="right-slidebar" id="right-sidebar">
                     </div>
                 </div>
+                
             </div>
-            <div class="right-sidebar">
+            
+            <!-- <div class="right-sidebar">
                 <div class="side-video-list">
                     <img src="./image/thumbnail1.png">
                     <div class="vid-info">
@@ -173,11 +180,10 @@
                         <p>15K views</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
-    <script src="video.js"></script>
-
 </body>
+<script src="./video.js"></script>
 
 </html>
