@@ -23,7 +23,7 @@ mostPopular();
 
 function append(data) {
     let rightslider = document.getElementById("right-sidebar"); 
-    // container-online.innerHTML = null;
+    rightslider.innerHTML = null;
     data.forEach(({ snippet, id: { videoId } }) => {
         let img = snippet.thumbnails.high.url;
         let title = snippet.title;
@@ -53,7 +53,18 @@ function append(data) {
     });
 }
 
+// search bar
+
+async function search(){
+    let query = document.getElementById("query").value;
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResult=25&q=${query}&key=${API}`);
+    let data = await res.json()
+    append(data.items);
+}
 // plat video title
+
+
+
 
 
 

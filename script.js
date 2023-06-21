@@ -1,8 +1,9 @@
+// const { async } = require("postcss-js");
 
 var menuIcon = document.querySelector(".menu-icon");
 var sidebar = document.querySelector(".sidebar");
 var container = document.querySelector(".container");
-var containeronline = document.getElementById("container-online");
+var containeronline = document.getElementById("containeronline");
 var help = document.querySelector('.help');
 let inputEl = document.getElementById('search');
 let modeEl = document.getElementById('mode')
@@ -41,8 +42,8 @@ async function mostPopular() {
 mostPopular();
 
 function append(data) {
-    let containeronline = document.getElementById("container-online"); 
-    // container-online.innerHTML = null;
+    let containeronline = document.getElementById("containeronline");
+    containeronline.innerHTML = null;
     data.forEach(({ snippet, id: { videoId } }) => {
         let img = snippet.thumbnails.high.url;
         let title = snippet.title;
@@ -71,23 +72,18 @@ function append(data) {
     });
 }
 
+
+
+
 // search video in youTube
 
-async function search() {
+
+// `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResult=25&q=${query}&key=${API}`
+
+async function search(){
     let query = document.getElementById("query").value;
-    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${API}`);
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResult=25&q=${query}&key=${API}`);
     let data = await res.json()
     append(data.items);
-    console.log(value);
 }
-
-//
-
-// let searchLink = "https://www.youtube.com/results?search_query=";
-
-// searchBtn.addEventListener('click', () => {
-//     if (searchInput.value.length) {
-//         location.href = searchLink + searchInput.value;
-//     }
-// })
 
