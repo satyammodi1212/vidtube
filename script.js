@@ -29,7 +29,8 @@ modeEl.addEventListener('click', function () {
 
 // api search bar
 
-let API = "AIzaSyB7VsYkvO3WVCe3u0BAJHaI7JIVSfyH9Xo";
+// let API = "AIzaSyB7VsYkvO3WVCe3u0BAJHaI7JIVSfyH9Xo";
+let API = "AIzaSyDrb4gJQqpv0zedPJq0BI1OMTBLdLOOxfg";
 async function mostPopular() {
     let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&chart=mostPopular=&regionCode=IN&key=${API}`);
     // let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=the%20weeknd&key=AIzaSyB7VsYkvO3WVCe3u0BAJHaI7JIVSfyH9Xo=IN&Key= ${API}`);

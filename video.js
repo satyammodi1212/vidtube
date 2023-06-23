@@ -12,7 +12,8 @@ function playVideo(data) {
 playVideo(data);
 
 
-let API = "AIzaSyB7VsYkvO3WVCe3u0BAJHaI7JIVSfyH9Xo";
+// let API = "AIzaSyB7VsYkvO3WVCe3u0BAJHaI7JIVSfyH9Xo";
+let API = "AIzaSyDrb4gJQqpv0zedPJq0BI1OMTBLdLOOxfg";
 async function mostPopular() {
     let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&chart=mostPopular=&regionCode=IN&key=${API}`);
     let data = await res.json();
@@ -23,6 +24,8 @@ mostPopular();
 
 function append(data) {
     let rightslider = document.getElementById("right-sidebar"); 
+    let clanelname = document.getElementById("clanelname");
+
     rightslider.innerHTML = null;
     data.forEach(({ snippet, id: { videoId } }) => {
         let img = snippet.thumbnails.high.url;
@@ -50,6 +53,10 @@ function append(data) {
         });
         div.append(image, name, Cname);
         rightslider.append(div);
+
+        clanelname.innerHTML = (`${title}`);
+        // clanelname.innerText = title;
+
     });
 }
 
