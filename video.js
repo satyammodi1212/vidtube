@@ -1,3 +1,4 @@
+
 let data = JSON.parse(localStorage.getItem("video"));
 
 function playVideo(data) {
@@ -69,6 +70,17 @@ async function search(){
     append(data.items);
 }
 // plat video title
+
+
+let moderl = document.getElementById("mode");
+let navEl = document.getElementById("nav");
+let contEl = document.getElementById("container");
+
+moderl.addEventListener('click', function(){
+    navEl.classList.toggle('colour');
+    contEl.classList.toggle("colour");
+});
+
 
 
 
