@@ -108,6 +108,9 @@ nav{
     border-radius: 10px;
 
 }
+.side-video-list{
+    margin-bottom: 15px;
+}
 .side-video-list img{
     width: 95%;
     border-radius: 7px;
